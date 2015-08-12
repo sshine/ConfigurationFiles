@@ -101,9 +101,13 @@
 
 ;; Haskell
 (require 'haskell-mode)
+(require 'haskell-interactive-mode)
+(require 'haskell-process)
 (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
+
 
 ;; Markdown
 (add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))
