@@ -1,6 +1,4 @@
 # Defaults
-alias vi=nvim
-alias vim=nvim
 export EDITOR=nvim
 export PAGER=less
 
@@ -23,6 +21,11 @@ alias gdc='git diff --cached'
 alias gap='git add -p'
 alias gl='git log'
 alias gpr='git pull --rebase'
+
+# These are new times; old muscle memory
+alias vi=nvim
+alias vim=nvim
+alias ack=rg
 
 # History
 HISTFILE=~/.history
