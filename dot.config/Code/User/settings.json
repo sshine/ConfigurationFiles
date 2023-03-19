@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Solarized Light",
+    "gitlens.telemetry.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "editor.rulers": [
+        100,
+        120
+    ],
+    "editor.minimap.enabled": false,
+    "rust-analyzer.check.command": "clippy",
+    "editor.formatOnSave": true,
+    "editor.inlayHints.enabled": "off"
+}
