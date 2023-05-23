@@ -1,5 +1,5 @@
 # Defaults
-export EDITOR=nvim
+export EDITOR=vim
 export PAGER=less
 
 # Locale
@@ -23,8 +23,7 @@ alias gl='git log'
 alias gpr='git pull --rebase'
 
 # These are new times; old muscle memory
-alias vi=nvim
-alias vim=nvim
+alias vi=vim
 alias ack=rg
 
 # History
