@@ -42,8 +42,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod+Return exec alacritty # i3-sensible-terminal
 bindsym $mod+Escape exec i3lock
 
-bindsym $mod+Tab focus right
-bindsym $mod+Shift+Tab focus left
+focus_wrapping workspace
+bindsym $mod+Tab focus next
+bindsym $mod+Shift+Tab focus prev
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
