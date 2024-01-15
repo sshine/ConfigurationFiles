@@ -11,7 +11,6 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 
 # Aliases
-alias news='browsh --startup-url https://hckrnews.com'
 alias rm='rm -iv'
 alias ls='ls -F --color=auto'
 
@@ -52,18 +51,19 @@ if [ "$commands[kubectl]" ]; then
   source <(kubectl completion zsh)
 fi
 
+zstyle :compinstall filename '/home/simon/.zshrc'
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
+
 if [ "$commands[rustup]" -a ! -e ~/.zfunc/_rustup ]; then
   mkdir -p ~/.zfunc
   rustup completions zsh > ~/.zfunc/_rustup
   fpath+=~/.zfunc
 fi
 
-zstyle :compinstall filename '/home/simon/.zshrc'
-autoload -Uz compinit && compinit
-zstyle ':completion:*' menu select
+[ -f "/usr/bin/aws_zsh_completer.sh" ] && source /usr/bin/aws_zsh_completer.sh
 
 # Highlighting
-
 zsh_syn=/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [ -e "$zsh_syn" ]; then
   source "$zsh_syn"
@@ -80,12 +80,9 @@ PROMPT='%F{green}[%n@%M %y]%f %F{red}'\$vcs_info_msg_0_'%f %F{blue}%~%f'$'\n''%F
 PROMPT='%B%F{green}%n@%M%f%b:%F{blue}%~%f %F{red}'\$vcs_info_msg_0_'%f %(!.#.$) '
 zstyle ':vcs_info:git:*' formats '%b'
 
-#[ -f "/home/sshine/.ghcup/env" ] && source "/home/sshine/.ghcup/env" # ghcup-env
-
-# .NET
-export DOTNET_ROOT=/snap/dotnet-sdk/180
-export PATH="$DOTNET_ROOT:$PATH"
+# Programming Environments
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 export PATH="/opt/aarch64-linux-musl-cross/bin:$PATH"
 
 [ -f "/home/sshine/.ghcup/env" ] && source "/home/sshine/.ghcup/env" # ghcup-env
