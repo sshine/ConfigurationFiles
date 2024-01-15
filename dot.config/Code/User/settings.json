@@ -8,7 +8,9 @@
     ],
     "editor.minimap.enabled": false,
     "rust-analyzer.check.command": "clippy",
-    "editor.formatOnSave": true,
     "editor.inlayHints.enabled": "off",
-    "window.zoomLevel": 1
+    "gitlens.showWelcomeOnInstall": false,
+    "workbench.startupEditor": "none",
+    "editor.formatOnSave": true,
+    "window.zoomLevel": 3
 }
